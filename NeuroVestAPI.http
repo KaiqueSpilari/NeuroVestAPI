@@ -1,0 +1,6 @@
+@NeuroVestAPI_HostAddress = http://localhost:5274
+
+GET {{NeuroVestAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
