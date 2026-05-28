@@ -1,8 +1,15 @@
+using Microsoft.EntityFrameworkCore;
+using NeuroVestAPI.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
+builder.Services.AddDbContext<NeuroVestDbContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("DefaultConnection") ??
+        "Server=(localdb)\\MSSQLLocalDB;Database=NeuroVestAPI;Trusted_Connection=True;TrustServerCertificate=True"));
 
 var app = builder.Build();
 
