@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'NeuroVestAPI.Tests'">
+    <BaseOutputPath>$(MSBuildThisFileDirectory)artifacts/tests/bin/</BaseOutputPath>
+    <BaseIntermediateOutputPath>$(MSBuildThisFileDirectory)artifacts/tests/obj/</BaseIntermediateOutputPath>
+  </PropertyGroup>
+</Project>

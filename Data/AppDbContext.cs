@@ -1,11 +1,10 @@
 using Microsoft.EntityFrameworkCore;
-using NeuroVestAPI.Models;
 
-namespace NeuroVestAPI.Data
+namespace NeuroVestAPI.Models
 {
-    public class NeuroVestDbContext : DbContext
+    public class AppDbContext : DbContext
     {
-        public NeuroVestDbContext(DbContextOptions<NeuroVestDbContext> options) : base(options)
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
 
@@ -70,7 +69,7 @@ namespace NeuroVestAPI.Data
                 entity.HasOne(x => x.MedicoResponsavel)
                     .WithMany()
                     .HasForeignKey(x => x.MedicoResponsavelId)
-                    .OnDelete(DeleteBehavior.SetNull);
+                    .OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<CondicaoPreExistente>(entity =>
@@ -85,7 +84,7 @@ namespace NeuroVestAPI.Data
                 entity.HasOne(x => x.PerfilPaciente)
                     .WithMany()
                     .HasForeignKey(x => x.PacienteId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                    .OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<Dispositivo>(entity =>
@@ -118,7 +117,7 @@ namespace NeuroVestAPI.Data
                 entity.HasOne(x => x.PerfilPaciente)
                     .WithMany()
                     .HasForeignKey(x => x.PacienteId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                    .OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<MetricasOndasEEG>(entity =>
@@ -132,7 +131,7 @@ namespace NeuroVestAPI.Data
                 entity.HasOne(x => x.SessaoTelemetria)
                     .WithMany()
                     .HasForeignKey(x => x.SessaoId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                    .OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<AnaliseIAeRiscos>(entity =>
@@ -147,7 +146,7 @@ namespace NeuroVestAPI.Data
                 entity.HasOne(x => x.PerfilPaciente)
                     .WithMany()
                     .HasForeignKey(x => x.PacienteId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                    .OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<RecomendacaoSistema>(entity =>
@@ -163,7 +162,7 @@ namespace NeuroVestAPI.Data
                 entity.HasOne(x => x.AnaliseIAeRiscos)
                     .WithMany()
                     .HasForeignKey(x => x.AnaliseId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                    .OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<AlertaSistema>(entity =>
@@ -180,7 +179,7 @@ namespace NeuroVestAPI.Data
                 entity.HasOne(x => x.PerfilPaciente)
                     .WithMany()
                     .HasForeignKey(x => x.PacienteId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                    .OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<LogExportacaoDados>(entity =>
@@ -196,7 +195,7 @@ namespace NeuroVestAPI.Data
                 entity.HasOne(x => x.PerfilPaciente)
                     .WithMany()
                     .HasForeignKey(x => x.PacienteId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                    .OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<ParametrizacaoAlerta>(entity =>
@@ -222,7 +221,7 @@ namespace NeuroVestAPI.Data
                 entity.HasOne(x => x.Login)
                     .WithMany()
                     .HasForeignKey(x => x.LoginId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                    .OnDelete(DeleteBehavior.NoAction);
                 entity.HasOne(x => x.Dispositivo)
                     .WithMany()
                     .HasForeignKey(x => x.DispositivoId)
@@ -242,7 +241,7 @@ namespace NeuroVestAPI.Data
                 entity.HasOne(x => x.PerfilPaciente)
                     .WithMany()
                     .HasForeignKey(x => x.ContextoPacienteId)
-                    .OnDelete(DeleteBehavior.SetNull);
+                    .OnDelete(DeleteBehavior.NoAction);
             });
 
             modelBuilder.Entity<SessaoECGRawData>(entity =>
@@ -257,7 +256,7 @@ namespace NeuroVestAPI.Data
                 entity.HasOne(x => x.SessaoTelemetria)
                     .WithMany()
                     .HasForeignKey(x => x.SessaoId)
-                    .OnDelete(DeleteBehavior.Cascade);
+                    .OnDelete(DeleteBehavior.NoAction);
             });
         }
     }
