@@ -6304,19 +6304,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/DS2/.nuget/packages/": {}
+    "/Users/ds2/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/DS2/Desktop/NeuroVestAPI/NeuroVestAPI.csproj",
+      "projectUniqueName": "/Users/ds2/NeuroVestAPI/NeuroVestAPI.csproj",
       "projectName": "NeuroVestAPI",
-      "projectPath": "/Users/DS2/Desktop/NeuroVestAPI/NeuroVestAPI.csproj",
-      "packagesPath": "/Users/DS2/.nuget/packages/",
-      "outputPath": "/Users/DS2/Desktop/NeuroVestAPI/obj/",
+      "projectPath": "/Users/ds2/NeuroVestAPI/NeuroVestAPI.csproj",
+      "packagesPath": "/Users/ds2/.nuget/packages/",
+      "outputPath": "/Users/ds2/NeuroVestAPI/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/DS2/.nuget/NuGet/NuGet.Config"
+        "/Users/ds2/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
