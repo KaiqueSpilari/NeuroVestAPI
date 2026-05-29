@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NeuroVestAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4fd7c303122b66a0203a0882bab51139861fd998")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3fbdc6ae21882b514235c5c21bc2ce26c0da6caf")]
 [assembly: System.Reflection.AssemblyProductAttribute("NeuroVestAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NeuroVestAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
