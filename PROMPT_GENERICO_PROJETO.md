@@ -11,6 +11,7 @@ O banco de dados é o mesmo já definido para o grupo, e o que pode mudar entre 
 ### Objetivo
 
 Quero que a aplicação fique pronta para uso, com:
+
 - `AppDbContext` configurado corretamente.
 - Controllers criadas ou ajustadas.
 - Migration criada e aplicada.
@@ -69,6 +70,7 @@ Quero que a aplicação fique pronta para uso, com:
 ### Resultado esperado
 
 No final, eu quero que você entregue:
+
 - A API funcionando.
 - O banco atualizado e populado.
 - Os endpoints testados.

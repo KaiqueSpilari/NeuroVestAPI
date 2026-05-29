@@ -58,6 +58,7 @@ Quero que você confira a estrutura do projeto, identifique os arquivos principa
 ### Resultado esperado
 
 No final, eu quero:
+
 - A API funcionando localmente.
 - O banco real populado com dados.
 - Os endpoints validados.

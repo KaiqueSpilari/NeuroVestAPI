@@ -5,6 +5,7 @@
 O NeuroVestAPI é uma API ASP.NET Core Web API em .NET 10 para o domínio de monitoramento neurocardiovascular. O projeto expõe endpoints CRUD para várias entidades clínicas e operacionais, usa Entity Framework Core com SQL Server no ambiente real e conta com uma suíte de testes de integração com SQLite em memória.
 
 O fluxo que foi implementado e validado neste repositório incluiu:
+
 - Criação do contexto do banco.
 - Configuração do `Program.cs`.
 - Geração das controllers via scaffold.
@@ -87,6 +88,7 @@ O contexto está em `Data/AppDbContext.cs` e centraliza os `DbSet` do domínio:
 ### Login
 
 Campos principais:
+
 - `LoginId`
 - `Email`
 - `SenhaHash`
@@ -96,6 +98,7 @@ Campos principais:
 ### PerfilMedico
 
 Campos principais:
+
 - `PerfilMedicoId`
 - `NomeCompleto`
 - `Crm`
@@ -104,6 +107,7 @@ Campos principais:
 ### PerfilPaciente
 
 Campos principais:
+
 - `PerfilPacienteId`
 - `LoginId`
 - `MedicoResponsavelId`
@@ -118,6 +122,7 @@ Campos principais:
 ### CondicaoPreExistente
 
 Campos principais:
+
 - `CondicaoPreExistenteId`
 - `LoginId`
 - `PacienteId`
@@ -126,6 +131,7 @@ Campos principais:
 ### Dispositivo
 
 Campos principais:
+
 - `DispositivoId`
 - `LoginId`
 - `CodigoHardware`
@@ -139,6 +145,7 @@ Campos principais:
 ### SessaoTelemetria
 
 Campos principais:
+
 - `Id`
 - `LoginId`
 - `PacienteId`
@@ -157,6 +164,7 @@ Campos principais:
 ### MetricasOndasEEG
 
 Campos principais:
+
 - `Id`
 - `LoginId`
 - `SessaoId`
@@ -169,6 +177,7 @@ Campos principais:
 ### AnaliseIAeRiscos
 
 Campos principais:
+
 - `AnaliseIAeRiscosId`
 - `LoginId`
 - `PacienteId`
@@ -181,6 +190,7 @@ Campos principais:
 ### RecomendacaoSistema
 
 Campos principais:
+
 - `RecomendacaoSistemaId`
 - `LoginId`
 - `AnaliseId`
@@ -190,6 +200,7 @@ Campos principais:
 ### AlertaSistema
 
 Campos principais:
+
 - `AlertaSistemaId`
 - `LoginId`
 - `PacienteId`
@@ -201,6 +212,7 @@ Campos principais:
 ### LogExportacaoDados
 
 Campos principais:
+
 - `LogExportacaoDadosId`
 - `LoginId`
 - `PacienteId`
@@ -211,6 +223,7 @@ Campos principais:
 ### ParametrizacaoAlerta
 
 Campos principais:
+
 - `ParametrizacaoAlertaId`
 - `LoginId`
 - `MetricaAlvo`
@@ -221,6 +234,7 @@ Campos principais:
 ### HistoricoManutencaoDispositivo
 
 Campos principais:
+
 - `HistoricoManutencaoDispositivoId`
 - `LoginId`
 - `DispositivoId`
@@ -231,6 +245,7 @@ Campos principais:
 ### LogInteracaoIA
 
 Campos principais:
+
 - `LogInteracaoIAId`
 - `LoginId`
 - `ContextoPacienteId`
@@ -242,6 +257,7 @@ Campos principais:
 ### SessaoECGRawData
 
 Campos principais:
+
 - `Id`
 - `LoginId`
 - `SessaoId`
@@ -271,6 +287,7 @@ As controllers publicadas seguem o padrão CRUD:
 ### Padrão de rotas
 
 Em geral, as rotas seguem este formato:
+
 - `GET /api/Entidade`
 - `GET /api/Entidade/{id}`
 - `POST /api/Entidade`
@@ -280,6 +297,7 @@ Em geral, as rotas seguem este formato:
 ### Ajuste importante do Login
 
 O `POST /api/Login` não usa a entidade inteira como contrato de entrada. Ele usa `LoginCreateRequest` para receber apenas:
+
 - `email`
 - `senhaHash`
 - `tipoUsuario`
@@ -292,6 +310,7 @@ Isso evitou o problema de binding e tornou o endpoint mais simples de consumir.
 O projeto usa SQL Server real configurado em `appsettings.json`.
 
 A configuração contém:
+
 - servidor SQL Server na rede local
 - banco `NeuroVestAPI`
 - usuário administrador SQL
@@ -304,6 +323,7 @@ Por segurança, este documento não repete credenciais sensíveis.
 Foi criada a migration inicial do projeto e aplicada no SQL Server.
 
 Fluxo executado:
+
 - gerar migration
 - revisar o snapshot
 - aplicar o banco com `dotnet ef database update`
@@ -315,6 +335,7 @@ O projeto de testes está em `NeuroVestAPI.Tests`.
 ### Estrutura dos testes
 
 Arquivos principais:
+
 - `NeuroVestAPI.Tests/ApiTestFactory.cs`
 - `NeuroVestAPI.Tests/ApiEndpointSmokeTests.cs`
 - `NeuroVestAPI.Tests/NeuroVestAPI.Tests.csproj`
@@ -331,6 +352,7 @@ Arquivos principais:
 ### Cobertura validada
 
 Os testes individuais cobrem:
+
 - Login
 - PerfilMedico
 - PerfilPaciente
@@ -386,6 +408,7 @@ Depois da validação automática, foi feita uma carga manual nos endpoints reai
 A API real respondeu corretamente para os endpoints principais, e a verificação por `GET` mostrou contagem positiva em todas as coleções importantes.
 
 Resultado final observado:
+
 - `Login: 5`
 - `PerfilMedico: 1`
 - `PerfilPaciente: 1`
@@ -437,6 +460,7 @@ dotnet ef database update -c AppDbContext
 `POST /api/Login`
 
 Exemplo de payload:
+
 ```json
 {
   "email": "admin@email.com",
@@ -452,6 +476,7 @@ As demais entidades seguem o padrão da própria classe de modelo, enviando os c
 ## Conclusão
 
 O projeto ficou com:
+
 - API funcional.
 - Contexto EF Core configurado.
 - Migration aplicada no SQL Server.
@@ -461,6 +486,7 @@ O projeto ficou com:
 - Documentação do processo preservada neste repositório.
 
 Se quiser continuar a evolução do projeto, os próximos passos naturais são:
+
 - padronizar DTOs de entrada em mais controllers,
 - adicionar validação por `DataAnnotations` ou FluentValidation,
 - melhorar tratamento de erros,
