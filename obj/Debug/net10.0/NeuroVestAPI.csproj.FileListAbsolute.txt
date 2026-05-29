@@ -1,9 +1,0 @@
-/Users/ds2/Documents/APINeuroVest/NeuroVestAPI/obj/Debug/net10.0/NeuroVestAPI.csproj.AssemblyReference.cache
-/Users/ds2/Documents/APINeuroVest/NeuroVestAPI/obj/Debug/net10.0/rpswa.dswa.cache.json
-/Users/ds2/Documents/APINeuroVest/NeuroVestAPI/obj/Debug/net10.0/NeuroVestAPI.GeneratedMSBuildEditorConfig.editorconfig
-/Users/ds2/Documents/APINeuroVest/NeuroVestAPI/obj/Debug/net10.0/NeuroVestAPI.AssemblyInfoInputs.cache
-/Users/ds2/Documents/APINeuroVest/NeuroVestAPI/obj/Debug/net10.0/NeuroVestAPI.AssemblyInfo.cs
-/Users/ds2/Documents/APINeuroVest/NeuroVestAPI/obj/Debug/net10.0/NeuroVestAPI.csproj.CoreCompileInputs.cache
-/Users/ds2/Documents/APINeuroVest/NeuroVestAPI/obj/Debug/net10.0/NeuroVestAPI.MvcApplicationPartsAssemblyInfo.cs
-/Users/ds2/Documents/APINeuroVest/NeuroVestAPI/obj/Debug/net10.0/NeuroVestAPI.MvcApplicationPartsAssemblyInfo.cache
-/Users/ds2/Documents/APINeuroVest/NeuroVestAPI/obj/Debug/net10.0/NeuroVestAPI.sourcelink.json
